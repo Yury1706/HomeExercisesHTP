@@ -12,7 +12,7 @@ public class Pyramid {
         int[][] pyramid = new int[size][size];
         int step = 0;
 
-        if (size % 2 != 0) {
+        if (size % 2 != 0) {            // Для нечетного значения длины пирамиды
 
             while (step <= size / 2) {
 
@@ -23,7 +23,7 @@ public class Pyramid {
                 }
                 step++;
             }
-        } else {
+        } else {                        // Для четного значения длины пирамиды
             while (step < size / 2) {
 
                 for (int i = step; i < (pyramid.length - step); i++) {
