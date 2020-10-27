@@ -8,11 +8,12 @@ public class DayOfMonth {
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter number of a month: ");
-        int month = scanner.nextInt();
+        int numberOfMonth = scanner.nextInt();
         System.out.print("Enter number of a day: ");
-        int day = scanner.nextInt();
+        int numberOfDay = scanner.nextInt();
 
-        switch (month) {
+        // решение через switch
+        switch (numberOfMonth) {
             case 1:
             case 3:
             case 5:
@@ -20,12 +21,12 @@ public class DayOfMonth {
             case 8:
             case 10:
             case 12:
-                if (day > 0 && day < 32) {
+                if (numberOfDay > 0 && numberOfDay < 32) {
                     System.out.println("That month has that day!!!");
                 } else System.out.println("That month doesn't have that day");
                 break;
             case 2:
-                if (day > 0 && day < 29) {  // При условии, что год не высокосный...
+                if (numberOfDay > 0 && numberOfDay < 29) {  // При условии, что год не высокосный...
                     System.out.println("That month has that day!!!");
                 } else System.out.println("That month doesn't have that day");
                 break;
@@ -34,7 +35,7 @@ public class DayOfMonth {
             case 6:
             case 9:
             case 11:
-                if (day > 0 && day < 31) {
+                if (numberOfDay > 0 && numberOfDay < 31) {
                     System.out.println("That month has that day!!!");
                 } else System.out.println("That month doesn't have that day");
                 break;
@@ -42,5 +43,14 @@ public class DayOfMonth {
             default:
                 System.out.println("The month of that number doesn't exist");
         }
+
+        // решение через массив
+
+        int[] months = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int indexOfMonth = numberOfMonth - 1;
+
+        if (numberOfDay > 0 && numberOfDay <= months[indexOfMonth]) {
+            System.out.println("That month has that day!!!");
+        } else System.out.println("That month doesn't have that day");
     }
 }
